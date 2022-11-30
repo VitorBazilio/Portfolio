@@ -1,7 +1,7 @@
-# Portifólio
+# Portfólio
 
 ## Resumo do projeto
-Projeto em que fiz um portifólio contendo algumas das informações sobre minha pessoa e minha carreira.
+Projeto em que fiz um portfólio contendo algumas das informações sobre minha pessoa e minha carreira.
 
 
 ## Autor
