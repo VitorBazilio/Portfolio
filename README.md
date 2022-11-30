@@ -12,9 +12,9 @@ Projeto em que fiz um portifólio contendo algumas das informações sobre minha
 Portifolio
 ## ✔️ Técnicas e tecnologias utilizadas
 
-- ``Java 8``
-- ``InteliJ IDEA``
-- ``Paradigma de orientação a objetos``
+- ``JavaScript``
+- ``CSS``
+- ``HTML``
 
 ## 📁 Acesso ao projeto
 Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/VitorBazilio/Portifolio).
