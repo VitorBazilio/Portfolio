@@ -9,6 +9,12 @@ body {
   letter-spacing: 1px;
 }
 
+footer{
+  background-image: url(../img/rosa-svg.svg);
+  background-size: 100%;
+  background-repeat: repeat-x;
+}
+
 h1,
 h2,
 p {
@@ -696,8 +702,13 @@ a {
 
 }
 
-.bk-white{
-  background-color: #FFF;
+.bk-effect{
+  
+  padding: 10px;
+  border-radius: 22px;
+  background: #141414;
+  box-shadow:  5px 5px 10px #0d0d0d,
+               -5px -5px 10px #1b1b1b;
 }
 
 /*
