@@ -42,13 +42,13 @@ footer p {
 }
 
 footer span {
-  color: #FF8C00;
+  color: #FFF;
   font-weight: bold;
   transition: .4s;
 }
 
 footer span:hover {
-  color: rgba(210, 64, 116, 1)
+  color: #000
 }
 
 [data-anime="js-scroll"] {
