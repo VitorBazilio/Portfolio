@@ -1,271 +1,559 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitor Bazilio — Desenvolvedor Web Full-Stack</title>
+  <meta name="description"
+    content="Vitor Bazilio, desenvolvedor web full-stack em São Paulo. JavaScript, C#/.NET, APIs RESTful e SQL — do banco de dados à interface.">
   <meta name="author" content="Vitor Bazilio">
-  <meta name="description" content="Portfólio do desenvolvedor Full-stack Vitor Bazilio">
-  <meta name="keywords" content="Portfolio, html, front-end, desenvolvimento, css, javascript">
-  <title>Vitor Bazilio</title>
-  <link type="image/png" sizes="120x120" rel="icon" href="img/icons8-código-do-google-ios-16-120.png">
+  <meta name="theme-color" content="#0f0f12">
+  <link rel="canonical" href="https://vitorbazilio.github.io/Portfolio/">
+
+  <!-- Open Graph: prévia bonita ao compartilhar o link no LinkedIn/WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vitor Bazilio — Desenvolvedor Web Full-Stack">
+  <meta property="og:description" content="JavaScript, C#/.NET, APIs RESTful e SQL. Veja meus projetos e experiência.">
+  <meta property="og:image" content="https://vitorbazilio.github.io/Portfolio/assets/Perfil.jpg">
+  <meta property="og:url" content="https://vitorbazilio.github.io/Portfolio/">
+  <meta property="og:locale" content="pt_BR">
+
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff8c00'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%230f0f12'%3EVB%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
-
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="stylesheet" href="./css/styles.css" />
+
+  <script>
+    // Aplica o tema antes da renderização para evitar "piscar"
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      } catch (e) { }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vitor Bazilio",
+    "jobTitle": "Desenvolvedor Web Full-Stack",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cajamar", "addressRegion": "SP", "addressCountry": "BR" },
+    "email": "mailto:sir.vitor.bazilio@gmail.com",
+    "url": "https://vitorbazilio.github.io/Portfolio/",
+    "sameAs": ["https://www.linkedin.com/in/bazilio-vitor/", "https://github.com/VitorBazilio"],
+    "knowsAbout": ["JavaScript", "HTML", "CSS", "C#", ".NET", "APIs RESTful", "SQL", "PHP"]
+  }
+  </script>
 </head>
 
 <body>
-  <header>
-    <nav data-menu="suave">
-      <p><a href="#home">&lsaquo;VB/&rsaquo;</a></p>
-      <button data-menu="button" aria-controls="menu"></button>
-      <ul data-menu="list" id="menu">
-        <a href="#home">
-          <li>Home</li>
-        </a>
-        <a href="#sobre">
-          <li>Sobre</li>
-        </a>
-        <a href="#experiencia">
-          <li>Experiência</li>
-        </a>
-        <a href="#projetos">
-          <li>Projetos</li>
-        </a>
-        
-        <a href="#habilidades">
-          <li>Habilidades</li>
-        </a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header" data-header>
+    <nav class="nav container" aria-label="Principal">
+      <a href="#inicio" class="nav__logo" aria-label="Vitor Bazilio, voltar ao início">&lt;VB<span>/</span>&gt;</a>
+
+      <button class="nav__toggle" type="button" aria-controls="menu" aria-expanded="false" data-menu-button>
+        <span class="sr-only">Abrir menu</span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__list" id="menu" data-menu>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato" class="nav__cta">Contato</a></li>
       </ul>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema claro/escuro">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" />
+          <path
+            d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" />
+        </svg>
+      </button>
     </nav>
   </header>
 
-  <main>
-    <section class="principal" id="home">
-      <div class="principal__left">
-        <h1>Olá, eu sou</h1>
-        <span class="principal__sentence"></span>
-        <span class="principal__input-cursor"></span>
-        <h1>Desenvolvedor Full-Stack</h1>
-        <div class="principal__botao">
-          <a href="https://www.linkedin.com/in/bazilio-vitor/" target="_blank">
-            <div class="principal__botao-linkedin">
-              <img src="./assets/linkedin.png" alt="" />
-              <p>LinkedIn</p>
-            </div>
-          </a>
-          <a href="https://github.com/vitorbazilio" target="_blank">
-            <div class="principal__botao-github">
-              <img src="./assets/github.png" alt="" />
-              <p>Github</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="principal__right">
-        <img src="./assets/programming.svg"
-          alt="Ilustração representando uma desenvolvedora sentada na cadeira mexendo no notebook com ambiente em volta."
-          data-tilt>
-      </div>
-
-      <div class="scroll" data-menu="suave"><a href="#sobre">
-          <p> scroll down </p> <img src="./assets/scroll.png" alt="Setinha indicando para rolar a tela para baixo">
-        </a></div>
-    </section>
-    <section class="sobre-mim" id="sobre" data-anime="js-scroll">
-      <div class="sobre-mim__foto">
-        <img src="./assets/Perfil.jpg" alt="Uma selfie da Vitor Bazilio" />
-      </div>
-      <div class="sobre-mim__descricao">
-        <h1>Sobre mim</h1>
-        <h2>Cajamar, São Paulo</h2>
-        <p>
-Vitor Bazilio, começou pesquisando sobre programação por curiosidade,  então em jan/2017 entrou em um curso técnico de informática para internet na Etec Bartolomeu. Após se formar, buscou trabalhar desenvolvendo algumas habilidades, então entrou na NerdHard, uma assistência técnica de seu bairro, além de entrar na faculdade de jogos digitais. Após um ano trabalhando como assistente técnico, buscou entrar para área da  programação trabalhando como desenvolvedor Full-Stack na Sislógica LTDA, assim aprendendo mais sobre o que poderia realizar com suas habilidades, fez alguns projetos com a empresa, após um ano na empresa e formado na faculdade optou por explorar as oportunidades no mercado fazendo cursos de front-end, jogos e outros, ainda está se aprimorando, mas isso nunca vai mudar, pois o aprendizado é um período constante.
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero container" id="inicio">
+      <div class="hero__text">
+        <p class="badge"><span class="badge__dot" aria-hidden="true"></span>Disponível para novas oportunidades</p>
+        <h1 class="hero__title">
+          Olá, eu sou <span class="gradient-text">Vitor Bazilio</span>
+        </h1>
+        <p class="hero__role">Desenvolvedor Web <strong>Full-Stack</strong></p>
+        <p class="hero__typing" aria-label="Eu crio interfaces responsivas, APIs RESTful e sistemas completos">
+          <span aria-hidden="true">Eu crio&nbsp;</span><span class="hero__typing-word" data-typing
+            aria-hidden="true">interfaces responsivas</span><span class="hero__cursor" aria-hidden="true"></span>
         </p>
-        <div class="sobre-mim__descricao-buttons">
-          <a href="./assets/Currículo_VitorBazilio_FullStack.pdf" download="">
-            <div class="sobre-mim__descricao-buttons-curriculo">
-              <img src="./assets/download-da-nuvem.png" alt="" />
-              <p>Currículo</p>
-            </div>
-          </a>
-          <a href="mailto: sir.vitor.bazilio?subject=Vitor, vim pelo seu portfólio! Gostaria de conversar." target="_blank">
-            <div class="sobre-mim__descricao-buttons-email">
-              <img src="./assets/email.png" alt="" />
-              <p>E-mail</p>
-            </div>
+        <p class="hero__pitch">
+          Construo aplicações web completas com <strong>JavaScript</strong>, <strong>C# / .NET</strong> e
+          <strong>SQL</strong>, cuidando de tudo, do banco de dados à interface.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projetos">Ver projetos</a>
+          <a class="btn btn--ghost" href="./assets/curriculo-vitor-bazilio.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16" />
+            </svg>
+            Baixar currículo
           </a>
         </div>
 
+        <ul class="hero__social" aria-label="Redes">
+          <li><a href="https://www.linkedin.com/in/bazilio-vitor/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                class="devicon-linkedin-plain" aria-hidden="true"></i></a></li>
+          <li><a href="https://github.com/VitorBazilio" target="_blank" rel="noopener" aria-label="GitHub"><i
+                class="devicon-github-original" aria-hidden="true"></i></a></li>
+          <li><a href="mailto:sir.vitor.bazilio@gmail.com" aria-label="E-mail"><svg viewBox="0 0 24 24"
+                aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg></a></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__photo">
+          <img src="./assets/Perfil.jpg" alt="Foto de Vitor Bazilio" width="800" height="800" fetchpriority="high">
+        </div>
+        <pre class="hero__code" aria-hidden="true"><code><span class="t-k">const</span> <span class="t-v">dev</span> = {
+  nome: <span class="t-s">'Vitor Bazilio'</span>,
+  stack: [<span class="t-s">'JS'</span>, <span class="t-s">'C#'</span>, <span class="t-s">'.NET'</span>, <span class="t-s">'SQL'</span>],
+  local: <span class="t-s">'Cajamar, SP'</span>,
+  aberto: <span class="t-k">true</span>,
+};</code></pre>
       </div>
     </section>
-    <section class="experiencia" id="experiencia" data-anime="js-scroll">
-      <h1>Experiência</h1>
-      <div class="experiencia__wrapper">
-        <section class="experiencia__lugares">
-          <ul data-tab="menu">
-            <li>&#x1F393&#x1F393</li>
-            <li>1º emprego</li>
-            <li>Faculdade - FIT</li>
-            <li>Experiencia como Full-Stack</li>
+
+    <!-- NÚMEROS -->
+    <section class="stats container" aria-label="Destaques" data-reveal>
+      <div class="stat">
+        <strong>1+ ano</strong>
+        <span>como programador full-stack</span>
+      </div>
+      <div class="stat">
+        <strong>2</strong>
+        <span>formações em tecnologia</span>
+      </div>
+      <div class="stat">
+        <strong>360h</strong>
+        <span>de JavaScript moderno</span>
+      </div>
+      <div class="stat">
+        <strong>4+ anos</strong>
+        <span>de suporte técnico e hardware</span>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section container" id="sobre">
+      <header class="section__header" data-reveal>
+        <p class="eyebrow">01 · Sobre</p>
+        <h2>Do hardware ao código</h2>
+      </header>
+
+      <div class="about" data-reveal>
+        <div class="about__text">
+          <p>
+            Comecei a programar por curiosidade e transformei isso em carreira: me formei
+            <strong>Técnico em Informática para Internet</strong> pela Etec e depois em
+            <strong>Jogos Digitais</strong> pela Faculdade Impacta.
+          </p>
+          <p>
+            Na <strong>Sislogica</strong>, atuei como programador full-stack. Em seis meses passei a
+            desenvolver projetos para clientes com apoio de um sênior, cuidando das telas, das regras de
+            negócio, das APIs em .NET e do banco de dados. Entre as entregas estão um
+            <strong>aplicativo para entregadores</strong> e um <strong>dashboard</strong> comercializado aos
+            clientes da empresa.
+          </p>
+          <p>
+            Minha experiência com suporte técnico me deu algo que levo para o código: diagnosticar problemas
+            com método, conversar com o usuário e entregar uma solução que funciona de verdade.
+          </p>
+          <p>
+            Hoje meu foco é <strong>desenvolvimento web</strong>. Estou me aprofundando em JavaScript moderno,
+            React e no ecossistema de front-end e back-end para criar aplicações escaláveis.
+          </p>
+        </div>
+
+        <aside class="about__card" aria-label="Resumo">
+          <h3>Resumo rápido</h3>
+          <dl>
+            <div>
+              <dt>Foco</dt>
+              <dd>Desenvolvimento Web Full-Stack</dd>
+            </div>
+            <div>
+              <dt>Localização</dt>
+              <dd>Cajamar, SP · aberto a remoto e híbrido</dd>
+            </div>
+            <div>
+              <dt>Formação</dt>
+              <dd>Técnico em Informática para Internet · Jogos Digitais</dd>
+            </div>
+            <div>
+              <dt>Idiomas de código</dt>
+              <dd>JavaScript, C#, PHP, SQL</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="section container" id="experiencia">
+      <header class="section__header" data-reveal>
+        <p class="eyebrow">02 · Experiência</p>
+        <h2>Onde já trabalhei</h2>
+      </header>
+
+      <div class="career">
+        <ol class="timeline">
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__meta">
+              <time>Jan 2023 — Atual</time>
+            </div>
+            <div class="timeline__body">
+              <h3>Assistente Técnico em Computadores e Celulares</h3>
+              <p class="timeline__company">Nerdhard · Tecnologia e Design</p>
+              <ul>
+                <li>Formatação, instalação e configuração de sistemas operacionais, com ajustes e otimizações de
+                  desempenho.</li>
+                <li>Manutenção preventiva e corretiva de hardware em desktops, notebooks e dispositivos móveis.</li>
+                <li>Diagnóstico de falhas e atendimento direto ao cliente.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item timeline__item--featured" data-reveal>
+            <div class="timeline__meta">
+              <time>Jan 2021 — Abr 2022</time>
+              <span class="tag tag--accent">Desenvolvimento</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Programador Web Full-Stack</h3>
+              <p class="timeline__company">Sislogica LTDA</p>
+              <ul>
+                <li>Desenvolvi sistemas completos, do banco de dados à interface, implementando regras de negócio em
+                  <strong>C#</strong> e <strong>SQL</strong>.</li>
+                <li>Criei e mantive <strong>APIs RESTful</strong> com <strong>.NET Framework</strong>, integrando
+                  sistemas e serviços.</li>
+                <li>Construí interfaces responsivas com <strong>HTML, CSS e JavaScript</strong>.</li>
+                <li>Após 6 meses, passei a conduzir projetos de clientes com apoio de um sênior. Entre eles, um
+                  <strong>app para entregadores</strong> e um <strong>dashboard</strong> comercializado.</li>
+              </ul>
+              <ul class="tags" aria-label="Tecnologias">
+                <li class="tag">C#</li>
+                <li class="tag">.NET</li>
+                <li class="tag">SQL</li>
+                <li class="tag">API REST</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">HTML/CSS</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__meta">
+              <time>Dez 2019 — Dez 2020</time>
+            </div>
+            <div class="timeline__body">
+              <h3>Assistente Técnico em Hardware e Software</h3>
+              <p class="timeline__company">Nerdhard · Tecnologia e Design</p>
+              <ul>
+                <li>Montagem, manutenção e testes de desempenho de computadores.</li>
+                <li>Instalação e configuração de sistemas e softwares; suporte técnico a usuários.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+
+        <aside class="education" data-reveal aria-labelledby="formacao-titulo">
+          <h3 id="formacao-titulo">Formação &amp; cursos</h3>
+          <ul>
+            <li>
+              <strong>Graduação em Jogos Digitais</strong>
+              <span>Faculdade Impacta · 2020 — 2021</span>
+            </li>
+            <li>
+              <strong>Técnico em Informática para Internet</strong>
+              <span>Etec Bartolomeu Bueno da Silva · 2017 — 2019</span>
+            </li>
+            <li>
+              <strong>Web Moderno Completo com JavaScript</strong>
+              <span>Udemy · 2021 · 360h</span>
+            </li>
           </ul>
-        </section>
-        <div class="experiencia__descricao" data-tab="content">
-          <section data-anime="show-right">
-            <h2>Em busca de uma oportunidade para colocar minhas habilidades em prática</h2>
-            <p class="experiencia__descricao-local">Quem sabe na sua empresa?</p>
-            <p>Esta disponível para bater um papo, você pode entrar em contato via e-mail   <a href="mailto: sir.vitor.bazilio?subject=Vitor, vim pelo seu portfólio! Gostaria de conversar." target="_blank">sir.vitor.bazilio@gmail.com</a>
-              &#128521</p>
-          </section>
-          <section data-anime="show-right">
-            <h2>Assistente Técnico</h2>
-            <span>Dez 2019 - Dez 2020</span>
-            <p class="experiencia__descricao-local">Meu Primeiro Emprego - Projeto Colocar Habilidades na Pratica</p>
-            <p>
-              A primeira oportunidade na área da tecnologia, trabalhou sendo atendente de uma assistência técnica, além de consertar, verificar problemas dos computadores, montar computadores do zero, aprendeu como lidar com cliente e colocou em prática o conhecimento que adquiriu sobre hardware.
-            </p>
-          </section>
-          <section data-anime="show-right">
-            <h2>Graduação / Tecnólogo</h2>
-            <span>Fev 2020 - Dez 2021</span>
-            <p class="experiencia__descricao-local">Faculdade Impacta</p>
-            <p>
-              Buscou uma área diferenciada na questão de tecnologia, então entrou no curso de Jogos Digitais, o curso foi feito na Faculdade Impacta, assim pode aprender muito sobre um dos meus maiores passatempos, como fazer um jogo, a complexidade de como ajustar a matemática, dificuldade de executar um  jogo de tabuleiro até um jogo digital tanto para celular quanto para computadores e consoles, essa experiência o fez apreciar mais ainda o back-end, explorando a complexidade do mesmo em um game de plataforma que foi o seu projeto de conclusão de curso.
-            </p>
-          </section>
-          <section data-anime="show-right">
-            <h2>Programador Full-Stack</h2>
-            <span>Jan 2021 - Abril 2022</span>
-            <p class="experiencia__descricao-local">Sislogica LTDA</p>
-            <p>
-              Sua primeira oportunidade  na área de programação foi na empresa Sislógica LTDA, após 6 meses foi dada a  responsabilidade de criar somente com auxílio do sênior projeto para o cliente, assim desenvolvendo desde as telas até mesmo o banco do projeto, foram experienciar que exibiu o quão difícil é o trabalho, porém muito gratificante ao ver tudo completo, os desafios foram dados, criando aplicativo para entregador e dashboard para o sistema, que era comercializado ao cliente.
-            </p>
-          </section>
-        </div>
-    </section>
-    </div>
-    </section>
-    <section class="projetos" id="projetos" data-anime="js-scroll">
-      <h1>Projetos</h1>
-      <div class="projetos__wrapper">
-        <section class="projetos__card">
-          <a href="https://vitorbazilio.github.io/PokedexDevWeek/" target="_blank">
-            <img src="./assets/Pokedex_Kanto.png" alt="" class="projeto-img projeto-poke glass-px" />
-          </a>
-          <h2>Time dos Pokémons</h2>
-          <p>
-            Projeto desenvolvido a partir da Dev Week da Dev em Dobro, onde foi passado o basico do desenvolvimento com css, javascript e html.
-          </p>
-          <span>Tecnologias usadas no projeto: HTML, CSS, JavaScript Vanilla.</span>
-          <a href="https://vitorbazilio.github.io/PokedexDevWeek/" target="_blank">
-            <div class="projetos__card-button">
-              <img src="./assets/link.png" alt="Imagem da pokedex representando o projeto">
-              Visualizar
-            </div>
-          </a>
-        </section>
-        <section class="projetos__card">
-          <a href="https://github.com/VitorBazilio/PokedexLink" target="_blank">
-            <img src="./assets/pokedex.png" alt="Imagem de uma pokedex fazendo lusão ao projeto pokedex api"
-              class="projeto-img glass-px" />
-          </a>
-          <h2>Pokedex Api</h2>
-          <p>
-            Projeto voltado a aprender um pouco sobre APIs, criando um site com pokeapi colocando fotos e dados dos pokemons e estilizando um pouco.
-          </p>
-          <span>Tecnologias usadas no projeto: HTML e CSS.</span>
-          <a href="https://github.com/VitorBazilio/PokedexLink" target="_blank">
-            <div class="projetos__card-button">
-              <img src="./assets/link.png" alt="">
-              Git
-            </div>
-          </a>
-        </section>
-        <section class="projetos__card">
-          <a href="https://github.com/VitorBazilio/GlassAmazony" target="_blank">
-            <img src="./assets/glassamazonya.png" alt="" class="projeto-img glass-px" />
-          </a>
-          <h2>Glass Amazonya</h2>
-          <p>
-            Projeto de um game plataforma para PC realizado em CSharp desenvolvido no software unity, utilizando pixel art.
-          </p>
-          <span>Tecnologias usadas no projeto: CSharp, Unity, Photoshop.</span>
-          <a href="https://github.com/VitorBazilio/GlassAmazony" target="_blank">
-            <div class="projetos__card-button">
-              <img src="./assets/link.png" alt="Imagem do Game">
-              Git
-            </div>
-          </a>
-        </section>
-        <section class="projetos__card">
-          <a href="https://github.com/VitorBazilio/fundamentos-react" target="_blank">
-            <img src="./assets/react.svg"
-              alt="Imagem logo do ReactJS" class="projeto-img glass-px" />
-          </a>
-          <h2>Fundamentos React</h2>
-          <p>
-            Projeto que estou realizando, fazendo aulas de ReactJS para aprimorar minhas habilidades.
-          </p>
-          <span>Tecnologias usadas no projeto: HTML, CSS, ReactJS, JSX, Styled Components (CSS-in-JS).</span>
-          <a href="https://github.com/VitorBazilio/fundamentos-react" target="_blank">
-            <div class="projetos__card-button">
-              <img src="./assets/link.png" alt="">
-              Git
-            </div>
-          </a>
-
-        </section>
+        </aside>
       </div>
     </section>
-    <section class="habilidades " id="habilidades" data-anime="js-scroll">
-          <h1>Linguagens e Ferramentas:</h1>
-          <div >
 
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"
-              alt="Javascript">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"
-              alt="Typescript">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
-              alt="React">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"
-              alt="Node">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
-              alt="HTML">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"
-              alt="Css">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg"
-              alt="csharp">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/php/php.png"
-              alt="PHP">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png"
-              alt="SQL">
-            <img  class="m-2 bk-effect"
-              src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/unity/unity.png"
-              alt="Terminal">
+    <!-- PROJETOS -->
+    <section class="section container" id="projetos">
+      <header class="section__header" data-reveal>
+        <p class="eyebrow">03 · Projetos</p>
+        <h2>O que eu já construí</h2>
+      </header>
 
+      <div class="filters" role="group" aria-label="Filtrar projetos por tecnologia" data-filters>
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
+        <button type="button" class="filter" data-filter="javascript" aria-pressed="false">JavaScript</button>
+        <button type="button" class="filter" data-filter="react" aria-pressed="false">React</button>
+        <button type="button" class="filter" data-filter="php" aria-pressed="false">PHP</button>
+        <button type="button" class="filter" data-filter="csharp" aria-pressed="false">C#</button>
+      </div>
+
+      <div class="projects" data-projects>
+        <article class="project" data-tags="javascript" data-reveal>
+          <div class="project__thumb project__thumb--light">
+            <img src="./assets/Pokedex_Kanto.png" alt="Ilustração de uma Pokédex" loading="lazy" width="700"
+              height="525">
           </div>
-        
+          <div class="project__body">
+            <h3>Time dos Pokémons</h3>
+            <p>Página interativa em que, ao escolher um Pokémon da lista, o card em destaque muda de imagem, cores e
+              informações via manipulação do DOM. Feita na Dev Week da Dev em Dobro.</p>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://vitorbazilio.github.io/PokedexDevWeek/" target="_blank" rel="noopener">Ver
+                online ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/PokedexDevWeek" target="_blank"
+                rel="noopener">Código ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-tags="php" data-reveal>
+          <div class="project__thumb project__thumb--light">
+            <img src="./assets/pokedex.png" alt="Ilustração de uma Pokédex representando o projeto" loading="lazy">
+          </div>
+          <div class="project__body">
+            <h3>Pokédex API</h3>
+            <p>Pokédex que consome a PokéAPI no back-end em PHP, com dependências gerenciadas pelo Composer. O visual é
+              inspirado em Pokémon Sword &amp; Shield.</p>
+            <ul class="tags">
+              <li class="tag">PHP</li>
+              <li class="tag">Composer</li>
+              <li class="tag">API REST</li>
+              <li class="tag">CSS</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://github.com/VitorBazilio/PokedexLink" target="_blank" rel="noopener">Código
+                ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-tags="react javascript" data-reveal>
+          <div class="project__thumb project__thumb--react">
+            <i class="devicon-react-original" aria-hidden="true"></i>
+          </div>
+          <div class="project__body">
+            <h3>Fundamentos React</h3>
+            <p>Estudos práticos de React: componentes, props, estado e estilização com Styled Components (CSS-in-JS).
+            </p>
+            <ul class="tags">
+              <li class="tag">React</li>
+              <li class="tag">JSX</li>
+              <li class="tag">Styled Components</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://github.com/VitorBazilio/fundamentos-react" target="_blank"
+                rel="noopener">Código ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-tags="javascript" data-reveal>
+          <div class="project__thumb project__thumb--code">
+            <span>&lt;VB/&gt;</span>
+          </div>
+          <div class="project__body">
+            <h3>Este portfólio</h3>
+            <p>Site responsivo e acessível, sem frameworks: ES Modules, IntersectionObserver, tema claro/escuro,
+              filtros e integração com a API do GitHub.</p>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">GitHub API</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://github.com/VitorBazilio/Portfolio" target="_blank" rel="noopener">Código
+                ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-tags="php" data-reveal>
+          <div class="project__thumb project__thumb--php">
+            <i class="devicon-php-plain" aria-hidden="true"></i>
+          </div>
+          <div class="project__body">
+            <h3>DoppelNews</h3>
+            <p>Blog de RPG feito como TCC do curso técnico, em um ano de projeto. Tem painel administrativo, CRUD
+              de publicações e banco de dados SQL.</p>
+            <ul class="tags">
+              <li class="tag">PHP</li>
+              <li class="tag">SQL</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">HTML/CSS</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://github.com/VitorBazilio/DoppelNews" target="_blank" rel="noopener">Código
+                ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-tags="csharp" data-reveal>
+          <div class="project__thumb project__thumb--dark">
+            <img src="./assets/glassamazonya.png" alt="Logo do jogo Glass Amazonya em pixel art" loading="lazy"
+              width="530" height="292">
+          </div>
+          <div class="project__body">
+            <h3>Glass Amazonya</h3>
+            <p>Jogo de plataforma em pixel art para PC, desenvolvido na Unity com C#. Foi meu trabalho de conclusão da
+              graduação.</p>
+            <ul class="tags">
+              <li class="tag">C#</li>
+              <li class="tag">Unity</li>
+              <li class="tag">Photoshop</li>
+            </ul>
+            <p class="project__note">Projeto acadêmico · 2021</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="repos" data-reveal>
+        <div class="repos__header">
+          <h3>Atividade recente no GitHub</h3>
+          <a class="link" href="https://github.com/VitorBazilio?tab=repositories" target="_blank" rel="noopener">Ver
+            todos ↗</a>
+        </div>
+        <ul class="repos__list" data-repos aria-live="polite">
+          <li class="repo repo--skeleton" aria-hidden="true"></li>
+          <li class="repo repo--skeleton" aria-hidden="true"></li>
+          <li class="repo repo--skeleton" aria-hidden="true"></li>
+        </ul>
+      </div>
     </section>
-    <footer>
-      <p>Desenvolvido <img src="./img/icons8-triforce-96.png" alt="Ícone de coração"> por</p><a
-        href="https://www.linkedin.com/in/bazilio-vitor/" target="_blank"><span> Vitor Bazilio</span></a>
-    </footer>
+
+    <!-- HABILIDADES -->
+    <section class="section container" id="habilidades">
+      <header class="section__header" data-reveal>
+        <p class="eyebrow">04 · Habilidades</p>
+        <h2>Minha caixa de ferramentas</h2>
+      </header>
+
+      <div class="skills">
+        <div class="skill-group" data-reveal>
+          <h3>Front-end</h3>
+          <ul>
+            <li><i class="devicon-html5-plain colored" aria-hidden="true"></i>HTML5</li>
+            <li><i class="devicon-css3-plain colored" aria-hidden="true"></i>CSS3</li>
+            <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i>JavaScript (ES6+)</li>
+            <li><span class="skill-dot" aria-hidden="true"></span>Design responsivo</li>
+          </ul>
+        </div>
+        <div class="skill-group" data-reveal>
+          <h3>Back-end</h3>
+          <ul>
+            <li><i class="devicon-csharp-plain colored" aria-hidden="true"></i>C#</li>
+            <li><i class="devicon-dot-net-plain colored" aria-hidden="true"></i>.NET Framework</li>
+            <li><span class="skill-dot" aria-hidden="true"></span>APIs RESTful</li>
+            <li><i class="devicon-php-plain colored" aria-hidden="true"></i>PHP</li>
+          </ul>
+        </div>
+        <div class="skill-group" data-reveal>
+          <h3>Dados &amp; ferramentas</h3>
+          <ul>
+            <li><i class="devicon-azuresqldatabase-plain colored" aria-hidden="true"></i>SQL</li>
+            <li><i class="devicon-git-plain colored" aria-hidden="true"></i>Git</li>
+            <li><i class="devicon-github-original" aria-hidden="true"></i>GitHub</li>
+            <li><i class="devicon-unity-plain" aria-hidden="true"></i>Unity</li>
+          </ul>
+        </div>
+        <div class="skill-group skill-group--learning" data-reveal>
+          <h3>Estudando agora</h3>
+          <ul>
+            <li><i class="devicon-react-original colored" aria-hidden="true"></i>React</li>
+            <li><i class="devicon-typescript-plain colored" aria-hidden="true"></i>TypeScript</li>
+            <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i>Node.js</li>
+            <li><i class="devicon-python-plain colored" aria-hidden="true"></i>Python</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="soft-skills" data-reveal aria-label="Competências">
+        <li>Resolução de problemas</li>
+        <li>Atendimento ao usuário</li>
+        <li>Ciclo completo de desenvolvimento</li>
+        <li>Suporte e infraestrutura</li>
+        <li>Aprendizado contínuo</li>
+      </ul>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section container" id="contato">
+      <div class="contact" data-reveal>
+        <p class="eyebrow">05 · Contato</p>
+        <h2>Vamos conversar?</h2>
+        <p>Estou buscando uma oportunidade como <strong>desenvolvedor web</strong>. Se você tem uma vaga ou um
+          projeto em mente, me chame. Respondo rápido.</p>
+
+        <div class="contact__email">
+          <a href="mailto:sir.vitor.bazilio@gmail.com?subject=Vim%20pelo%20seu%20portf%C3%B3lio"
+            class="contact__address">sir.vitor.bazilio@gmail.com</a>
+          <button type="button" class="btn btn--ghost btn--sm" data-copy="sir.vitor.bazilio@gmail.com">
+            Copiar e-mail
+          </button>
+        </div>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://www.linkedin.com/in/bazilio-vitor/" target="_blank"
+            rel="noopener"><i class="devicon-linkedin-plain" aria-hidden="true"></i>LinkedIn</a>
+          <a class="btn btn--ghost" href="https://github.com/VitorBazilio" target="_blank" rel="noopener"><i
+              class="devicon-github-original" aria-hidden="true"></i>GitHub</a>
+          <a class="btn btn--ghost" href="./assets/curriculo-vitor-bazilio.pdf" download>Currículo (PDF)</a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span data-year>2026</span> Vitor Bazilio</p>
+      <p>Feito à mão com HTML, CSS e JavaScript puro.</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+
   <script src="./js/script.js" type="module"></script>
-  <script src="./js/modules/vanilla-tilt.min.js"></script>
 </body>
 
 </html>
