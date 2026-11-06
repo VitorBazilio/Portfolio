@@ -317,72 +317,91 @@
       <div class="filters" role="group" aria-label="Filtrar projetos por tecnologia" data-filters>
         <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Todos</button>
         <button type="button" class="filter" data-filter="javascript" aria-pressed="false">JavaScript</button>
-        <button type="button" class="filter" data-filter="react" aria-pressed="false">React</button>
         <button type="button" class="filter" data-filter="php" aria-pressed="false">PHP</button>
         <button type="button" class="filter" data-filter="csharp" aria-pressed="false">C#</button>
       </div>
 
       <div class="projects" data-projects>
+        <article class="project" data-tags="php javascript" data-reveal>
+          <div class="project__thumb project__thumb--php">
+            <i class="devicon-php-plain" aria-hidden="true"></i>
+          </div>
+          <div class="project__body">
+            <h3>Doppel</h3>
+            <p>Portal de notícias geek e plataforma de RPG de mesa: salas com chat e rolagem de dados, fichas de
+              D&amp;D 5e, ranking e painel administrativo. Nasceu como TCC do curso técnico e hoje está na versão 3.0.</p>
+            <ul class="tags">
+              <li class="tag">PHP 8</li>
+              <li class="tag">SQL</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">Vercel</li>
+            </ul>
+            <div class="project__links">
+              <a class="link" href="https://doppelnews.vercel.app" target="_blank" rel="noopener">Ver online ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/DoppelNews" target="_blank" rel="noopener">Código ↗</a>
+            </div>
+          </div>
+        </article>
+
         <article class="project" data-tags="javascript" data-reveal>
           <div class="project__thumb project__thumb--light">
             <img src="./assets/Pokedex_Kanto.png" alt="Ilustração de uma Pokédex" loading="lazy" width="700"
               height="525">
           </div>
           <div class="project__body">
-            <h3>Time dos Pokémons</h3>
-            <p>Página interativa em que, ao escolher um Pokémon da lista, o card em destaque muda de imagem, cores e
-              informações via manipulação do DOM. Feita na Dev Week da Dev em Dobro.</p>
+            <h3>Pokédex de Galar</h3>
+            <p>Pokédex front-end inspirada na interface de Pokémon Sword &amp; Shield, com JavaScript puro e
+              manipulação do DOM. Começou na Dev Week da Dev em Dobro.</p>
             <ul class="tags">
               <li class="tag">HTML</li>
               <li class="tag">CSS</li>
               <li class="tag">JavaScript</li>
+              <li class="tag">Vercel</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="https://vitorbazilio.github.io/PokedexDevWeek/" target="_blank" rel="noopener">Ver
-                online ↗</a>
-              <a class="link" href="https://github.com/VitorBazilio/PokedexDevWeek" target="_blank"
-                rel="noopener">Código ↗</a>
+              <a class="link" href="https://pokedexsword-front.vercel.app" target="_blank" rel="noopener">Ver online ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/PokedexDevWeek" target="_blank" rel="noopener">Código ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="project" data-tags="php" data-reveal>
+        <article class="project" data-tags="javascript php" data-reveal>
           <div class="project__thumb project__thumb--light">
             <img src="./assets/pokedex.png" alt="Ilustração de uma Pokédex representando o projeto" loading="lazy">
           </div>
           <div class="project__body">
-            <h3>Pokédex API</h3>
-            <p>Pokédex que consome a PokéAPI no back-end em PHP, com dependências gerenciadas pelo Composer. O visual é
-              inspirado em Pokémon Sword &amp; Shield.</p>
+            <h3>PokedexLink</h3>
+            <p>Pokédex que consome a PokéAPI, com front-end em JavaScript e API em PHP (Composer), no estilo de
+              Pokémon Sword &amp; Shield.</p>
             <ul class="tags">
+              <li class="tag">JavaScript</li>
               <li class="tag">PHP</li>
-              <li class="tag">Composer</li>
               <li class="tag">API REST</li>
-              <li class="tag">CSS</li>
+              <li class="tag">Vercel</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="https://github.com/VitorBazilio/PokedexLink" target="_blank" rel="noopener">Código
-                ↗</a>
+              <a class="link" href="https://pokedexlink-five.vercel.app/" target="_blank" rel="noopener">Ver online ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/PokedexLink" target="_blank" rel="noopener">Código ↗</a>
             </div>
           </div>
         </article>
 
-        <article class="project" data-tags="react javascript" data-reveal>
-          <div class="project__thumb project__thumb--react">
-            <i class="devicon-react-original" aria-hidden="true"></i>
+        <article class="project" data-tags="csharp" data-reveal>
+          <div class="project__thumb project__thumb--dark">
+            <img src="./assets/glassamazonya.png" alt="Logo do jogo Glass Amazonya em pixel art" loading="lazy"
+              width="530" height="292">
           </div>
           <div class="project__body">
-            <h3>Fundamentos React</h3>
-            <p>Estudos práticos de React: componentes, props, estado e estilização com Styled Components (CSS-in-JS).
-            </p>
+            <h3>Glass Amazonya</h3>
+            <p>Jogo 2D ambientado na Amazônia: uma arara-vermelha atravessa 20 fases fugindo de queimadas e
+              coletando frutos da região. Feito na Unity com C#, foi meu TCC da graduação.</p>
             <ul class="tags">
-              <li class="tag">React</li>
-              <li class="tag">JSX</li>
-              <li class="tag">Styled Components</li>
+              <li class="tag">C#</li>
+              <li class="tag">Unity</li>
+              <li class="tag">Photoshop</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="https://github.com/VitorBazilio/fundamentos-react" target="_blank"
-                rel="noopener">Código ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/Glass-Amazonya" target="_blank" rel="noopener">Código ↗</a>
             </div>
           </div>
         </article>
@@ -402,48 +421,8 @@
               <li class="tag">GitHub API</li>
             </ul>
             <div class="project__links">
-              <a class="link" href="https://github.com/VitorBazilio/Portfolio" target="_blank" rel="noopener">Código
-                ↗</a>
+              <a class="link" href="https://github.com/VitorBazilio/Portfolio" target="_blank" rel="noopener">Código ↗</a>
             </div>
-          </div>
-        </article>
-
-        <article class="project" data-tags="php" data-reveal>
-          <div class="project__thumb project__thumb--php">
-            <i class="devicon-php-plain" aria-hidden="true"></i>
-          </div>
-          <div class="project__body">
-            <h3>DoppelNews</h3>
-            <p>Blog de RPG feito como TCC do curso técnico, em um ano de projeto. Tem painel administrativo, CRUD
-              de publicações e banco de dados SQL.</p>
-            <ul class="tags">
-              <li class="tag">PHP</li>
-              <li class="tag">SQL</li>
-              <li class="tag">JavaScript</li>
-              <li class="tag">HTML/CSS</li>
-            </ul>
-            <div class="project__links">
-              <a class="link" href="https://github.com/VitorBazilio/DoppelNews" target="_blank" rel="noopener">Código
-                ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project" data-tags="csharp" data-reveal>
-          <div class="project__thumb project__thumb--dark">
-            <img src="./assets/glassamazonya.png" alt="Logo do jogo Glass Amazonya em pixel art" loading="lazy"
-              width="530" height="292">
-          </div>
-          <div class="project__body">
-            <h3>Glass Amazonya</h3>
-            <p>Jogo de plataforma em pixel art para PC, desenvolvido na Unity com C#. Foi meu trabalho de conclusão da
-              graduação.</p>
-            <ul class="tags">
-              <li class="tag">C#</li>
-              <li class="tag">Unity</li>
-              <li class="tag">Photoshop</li>
-            </ul>
-            <p class="project__note">Projeto acadêmico · 2021</p>
           </div>
         </article>
       </div>

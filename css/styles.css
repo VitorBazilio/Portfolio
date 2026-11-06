@@ -971,12 +971,6 @@ main {
   background: #0b1a26;
 }
 
-.project__thumb--react {
-  background: radial-gradient(circle at 50% 40%, #1d3a4a, #0d1b24);
-  color: #61dafb;
-  font-size: 4.5rem;
-}
-
 .project__thumb--php {
   background: radial-gradient(circle at 50% 40%, #3b3f6b, #1c1e36);
   color: #a8b0ff;
@@ -1016,13 +1010,6 @@ main {
   gap: 20px;
   margin-top: auto;
   padding-top: 4px;
-}
-
-.project__note {
-  margin-top: auto;
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
 }
 
 .repos {

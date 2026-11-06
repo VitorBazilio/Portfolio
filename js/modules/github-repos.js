@@ -97,10 +97,13 @@ export default async function initGithubRepos(user, limit = 3) {
     console.warn(error);
     const fallback = document.createElement("li");
     fallback.className = "repos__fallback";
-    fallback.innerHTML =
-      'Não foi possível carregar os repositórios agora. <a class="link" href="https://github.com/' +
-      encodeURIComponent(user) +
-      '" target="_blank" rel="noopener">Veja direto no GitHub ↗</a>';
+    const link = document.createElement("a");
+    link.className = "link";
+    link.href = `https://github.com/${encodeURIComponent(user)}`;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Veja direto no GitHub ↗";
+    fallback.append("Não foi possível carregar os repositórios agora. ", link);
     list.replaceChildren(fallback);
   }
 }
